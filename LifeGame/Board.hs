@@ -9,9 +9,8 @@ type Board = [[Indiv]]
 
 --ライフゲームのボードを見やすく文字列化　
 boardToString :: Board -> String
-boardToString board 
-  |board == [] = []
-  |otherwise = bar ++ '\n':show' board ++ bar
+boardToString board = 
+  bar ++ '\n':show' board ++ bar
     where bar = '+' : replicate (length $ head board) '-' ++ "+"
           show' [] = []
           show' (x:xs) = '|':(show'' x) ++ '\n' :(show' xs)
